@@ -1,0 +1,4 @@
+2020-03-10 00:01:54.307  INFO 5172 --- [restartedMain] com.adam.blog.BlogApplication            : Starting BlogApplication on VAIO-Aadm with PID 5172 (C:\Users\VAIO-Adam\IdeaProjects\blog\target\classes started by VAIO-Adam in C:\Users\VAIO-Adam\IdeaProjects\blog)
+2020-03-10 00:01:54.308  INFO 5172 --- [restartedMain] com.adam.blog.BlogApplication            : The following profiles are active: pro
+2020-03-10 00:01:58.580  WARN 5172 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-03-10 00:01:59.196  INFO 5172 --- [restartedMain] com.adam.blog.BlogApplication            : Started BlogApplication in 5.549 seconds (JVM running for 7.37)
