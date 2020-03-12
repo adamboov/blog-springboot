@@ -61,7 +61,7 @@ public class LogAspect {
         public String toString() {
             return "{" +
                     "url='" + url + '\'' +
-                    ", rp='" + ip + '\'' +
+                    ", ip='" + ip + '\'' +
                     ", classMethod='" + classMethod + '\'' +
                     ", args=" + Arrays.toString(args) +
                     '}';
