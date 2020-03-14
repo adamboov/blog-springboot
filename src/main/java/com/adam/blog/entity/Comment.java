@@ -12,12 +12,12 @@ public class Comment {
     @Id
     @GeneratedValue
     private Long id;
-    private String nickName;
+    private String nickname;
     private String email;
     private String content;
     private String avatar;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createTime;
+    private Date createtime;
 
     @ManyToOne
     private Blog blog;
@@ -39,12 +39,12 @@ public class Comment {
         this.id = id;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNickname(String nickName) {
+        this.nickname = nickname;
     }
 
     public String getEmail() {
@@ -71,12 +71,12 @@ public class Comment {
         this.avatar = avatar;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreatetime() {
+        return createtime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
     }
 
     public Blog getBlog() {
@@ -107,11 +107,11 @@ public class Comment {
     public String toString() {
         return "Comment{" +
                 "id=" + id +
-                ", nickName='" + nickName + '\'' +
+                ", nickName='" + nickname + '\'' +
                 ", email='" + email + '\'' +
                 ", content='" + content + '\'' +
                 ", avatar='" + avatar + '\'' +
-                ", createTime=" + createTime +
+                ", createTime=" + createtime +
                 '}';
     }
 }

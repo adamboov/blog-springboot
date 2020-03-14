@@ -12,16 +12,16 @@ public class User {
     @Id
     @GeneratedValue
     private Long id;
-    private String nickName;
-    private String userName;
-    private String passWord;
+    private String nickname;
+    private String username;
+    private String password;
     private String email;
     private String avatar;
     private Integer type;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createTime;
+    private Date createtime;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updateTime;
+    private Date updatetime;
 
     @OneToMany(mappedBy = "user")
     private List<Blog> blogs = new ArrayList<>();
@@ -37,28 +37,28 @@ public class User {
         this.id = id;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String passWord) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -85,20 +85,20 @@ public class User {
         this.type = type;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreatetime() {
+        return createtime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreatetime(Date createTime) {
+        this.createtime = createtime;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Date getUpdatetime() {
+        return updatetime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdatetime(Date updateTime) {
+        this.updatetime = updatetime;
     }
 
     public List<Blog> getBlogs() {
@@ -113,14 +113,14 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", nickName='" + nickName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", passWord='" + passWord + '\'' +
+                ", nickName='" + nickname + '\'' +
+                ", userName='" + username + '\'' +
+                ", passWord='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", type=" + type +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
+                ", createTime=" + createtime +
+                ", updateTime=" + updatetime +
                 '}';
     }
 }
