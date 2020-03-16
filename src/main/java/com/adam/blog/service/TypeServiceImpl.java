@@ -23,7 +23,6 @@ public class TypeServiceImpl implements TypeService {
         return typeRepository.save(type);
     }
 
-    @Transactional
     @Override
     public Type getType(Long id) {
         return typeRepository.findOne(id);
