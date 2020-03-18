@@ -53,6 +53,16 @@ public class Blog {
         this.tagIds = tagIds;
     }
 
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Blog() {
     }
 
@@ -197,6 +207,7 @@ public class Blog {
     }
 
     private String tagsToIds(List<Tag> tags){
+        System.out.println(tags);
         if ( !tags.isEmpty()){
             StringBuffer ids = new StringBuffer();
             boolean flag = false;
@@ -230,6 +241,12 @@ public class Blog {
                 ", recommend=" + recommend +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", type=" + type +
+                ", tags=" + tags +
+                ", user=" + user +
+                ", comments=" + comments +
+                ", tagIds='" + tagIds + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

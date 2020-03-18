@@ -4,6 +4,7 @@ import com.adam.blog.NotFoundException;
 import com.adam.blog.dao.BlogRepository;
 import com.adam.blog.entity.Blog;
 import com.adam.blog.entity.Type;
+import com.adam.blog.util.MyBeanUtils;
 import com.adam.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,11 @@ public class BlogServiceImpl implements BlogService {
         },pageable);
     }
 
+    @Override
+    public Page<Blog> listBlog(Pageable pageable) {
+        return blogRepository.findAll(pageable);
+    }
+
     @Transactional
     @Override
     public Blog saveBlog(Blog blog) {
@@ -73,7 +79,7 @@ public class BlogServiceImpl implements BlogService {
         if (b == null){
             throw new NotFoundException("该博客不存在");
         }
-        BeanUtils.copyProperties( b, blog);
+        BeanUtils.copyProperties( blog, b, MyBeanUtils.getNullPropertyNames(blog));
         return blogRepository.save(b);
     }
 
