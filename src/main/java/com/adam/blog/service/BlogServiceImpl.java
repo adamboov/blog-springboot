@@ -4,6 +4,7 @@ import com.adam.blog.NotFoundException;
 import com.adam.blog.dao.BlogRepository;
 import com.adam.blog.entity.Blog;
 import com.adam.blog.entity.Type;
+import com.adam.blog.util.MarkdownUtils;
 import com.adam.blog.util.MyBeanUtils;
 import com.adam.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
@@ -33,6 +34,20 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog getBlog(Long id) {
         return blogRepository.findOne(id);
+    }
+
+    @Override
+    public Blog getAndConvert(Long id) {
+        Blog blog = blogRepository.findOne(id);
+        if (null == blog){
+            throw new NotFoundException("该博客不存在！");
+        }
+//        防止hibernate操作数据库
+        Blog b = new Blog();
+        BeanUtils.copyProperties(blog, b);
+        String content = b.getContent();
+        b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
+        return b;
     }
 
     @Override
