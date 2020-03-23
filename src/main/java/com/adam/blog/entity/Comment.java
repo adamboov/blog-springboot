@@ -17,13 +17,13 @@ public class Comment {
     private String content;
     private String avatar;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createtime;
+    private Date createTime;
 
     @ManyToOne
     private Blog blog;
 
     @OneToMany(mappedBy = "parentComment")
-    private List<Comment> replyConmments = new ArrayList<>();
+    private List<Comment> replyComments = new ArrayList<>();
 
     @ManyToOne
     private Comment parentComment;
@@ -43,7 +43,7 @@ public class Comment {
         return nickname;
     }
 
-    public void setNickname(String nickName) {
+    public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
@@ -71,12 +71,12 @@ public class Comment {
         this.avatar = avatar;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public Blog getBlog() {
@@ -87,12 +87,12 @@ public class Comment {
         this.blog = blog;
     }
 
-    public List<Comment> getReplyConmments() {
-        return replyConmments;
+    public List<Comment> getReplyComments() {
+        return replyComments;
     }
 
-    public void setReplyConmments(List<Comment> replyConmments) {
-        this.replyConmments = replyConmments;
+    public void setReplyComments(List<Comment> replyComments) {
+        this.replyComments = replyComments;
     }
 
     public Comment getParentComment() {
@@ -107,11 +107,11 @@ public class Comment {
     public String toString() {
         return "Comment{" +
                 "id=" + id +
-                ", nickName='" + nickname + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", email='" + email + '\'' +
                 ", content='" + content + '\'' +
                 ", avatar='" + avatar + '\'' +
-                ", createTime=" + createtime +
+                ", createTime=" + createTime +
                 '}';
     }
 }
