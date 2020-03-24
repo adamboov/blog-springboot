@@ -383,6 +383,9 @@
                 }
             }
         });
+        $(function () {
+            $("#comment-container").load(/*[[@{/comments/{id}(id=${blog.id})}]]*/"comments/6");
+        });
         $('#comment-btn').click(function () {
             var boo = $('.ui.form').form('validate form');
             if (boo) {
