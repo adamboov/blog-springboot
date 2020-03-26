@@ -13,7 +13,7 @@
             <a href="#" th:href="@{/index.html}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>首页</a>
             <a href="#" th:href="@{/types/-1}" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
             <a href="#" th:href="@{/tags/-1}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
-            <a href="#" th:href="@{/archives/-1}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="clone icon"></i>归档</a>
+            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="clone icon"></i>归档</a>
             <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="info icon"></i>About me</a>
             <div class="right m-item item m-mobile-hide">
                 <form name="search" action="#" th:action="@{/search}" target="_blank" method="post">
@@ -43,24 +43,22 @@
             </div>
             <div class="three wide column">
                 <h4 class="ui inverted header m-text-thin m-text-space">最新博客</h4>
-                <div class="ui inverted link list">
-                    <a href="#" class="item">用户故事</a>
-                    <a href="#" class="item">有趣电影</a>
-                    <a href="#" class="item">编程新闻</a>
+                <div id="newblog-container">
+                   <div class="ui inverted link list" th:fragment="newblogList">
+                       <a href="#" class="item" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事</a>S
+                   </div>
                 </div>
             </div>
             <div class="three wide column">
                 <h4 class="ui inverted header m-text-thin m-text-space">联系我</h4>
                 <div class="ui inverted link list">
-                    <a href="#" class="item">Emaill: 135664558@qq.com</a>
-                    <a href="#" class="item">QQ: 135664558</a>
+                    <a href="#" class="item">Email: adamboov@163.com</a>
                 </div>
             </div>
             <div class="seven wide column">
                 <h4 m-text-thin m-text-space>About</h4>
-                <p class="m-text-thin m-text-space m-opacity-mini">WebSocket
-                    使得客户端和服务器之间的数据交换变得更加简单，允许服务端主动向客户端推送数据。在 WebSocket API
-                    中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。
+                <p class="m-text-thin m-text-space m-opacity-mini">
+                    这是我的个人博客，我会记录分享一些关于我在编程路上的任何内容，希望能对你们有所帮助，喜欢的人给个收藏分享吧！！！
                 </p>
             </div>
         </div>

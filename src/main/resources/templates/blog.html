@@ -413,7 +413,8 @@
         $("[name='content']").attr("placeholder", "@" + commentNickname).focus();
         $("[name='parrentComment.id']").val(commentId);
         $(window).scrollTo($('#comment-form'), 500);
-    }
+    };
+    $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
 </script>
 </body>
 
