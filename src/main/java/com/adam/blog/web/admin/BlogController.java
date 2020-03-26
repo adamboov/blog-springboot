@@ -70,7 +70,6 @@ public class BlogController {
         Blog blog = blogService.getBlog(id);
         blog.init();
         model.addAttribute("blog", blog);
-        System.out.println(blog);
         return INPUT;
     }
 

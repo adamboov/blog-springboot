@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -52,13 +52,13 @@
                                 <h3 class="ui teal header">博客</h3>
                             </div>
                             <div class="right aligned column">
-                                共<h2 class="ui orange header m-inline-block m-text-thin" th:text="${ page.totalElements}"> 14 </h2> 篇
+                                共<h2 class="ui orange header m-inline-block m-text-thin" th:text="${ page.totalElements}"> 14 </h2> 篇博客
                             </div>
                         </div>
                     </div>
 
                     <!-- content -->
-                    <div class="ui attached segment">
+                    <div class="ui attached segment" style="min-height: 240px;">
                         <div class="ui padded vertical segment m-padded-tb-large"  th:each="blog : ${page.content}">
                             <div class="ui middle aligned mobile reversed stackable grid">
                                 <div class="eleven wide column">
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="five wide column">
                                     <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_black">
-                                        <img src="../static/images/1.jpg" th:src="@{${blog.firstPic}}" alt="" class="ui rounded image">
+                                        <img src="../static/images/person/wechat.jpg" th:src="@{${blog.firstPic}}" alt="" class="ui rounded image">
                                     </a>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                         <div class="ui secondary segment">
                             <div class="ui two column grid">
                                 <div class="column">
-                                    <i class="tags icon"></i> 标签
+                                    <i class="tags icon"></i>标签
                                 </div>
                                 <div class="right aligned column">
                                     <a href="#" target="_black">more <i class="angle double right icon"></i></a>
@@ -159,7 +159,7 @@
                     <!-- 二维码 -->
                     <h4 class="ui horizontal divider header  m-margin-top-large teal">扫描添加</h4>
                     <div class="ui centered card" style="width: 11em;">
-                        <img src="../images/1.jpg" alt="" class="ui rounded image">
+                        <img src="../images/person/wechat.jpg" alt="" class="ui rounded image">
                     </div>
                 </div>
             </div>

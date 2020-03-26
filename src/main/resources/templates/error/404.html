@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
-<nav th:fragment="menu(0)" class="ui inverted attached segment m-padded-tb-mini">
+<nav th:replace="fragments :: menu(0)"class="ui inverted attached segment m-padded-tb-mini">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item">Adam博ov</h2>
