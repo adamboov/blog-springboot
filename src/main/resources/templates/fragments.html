@@ -45,7 +45,7 @@
                 <h4 class="ui inverted header m-text-thin m-text-space">最新博客</h4>
                 <div id="newblog-container">
                    <div class="ui inverted link list" th:fragment="newblogList">
-                       <a href="#" class="item" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事</a>S
+                       <a href="#" class="item" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事</a>
                    </div>
                 </div>
             </div>

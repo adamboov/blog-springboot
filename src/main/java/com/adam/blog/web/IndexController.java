@@ -1,9 +1,11 @@
 package com.adam.blog.web;
 
+import com.adam.blog.entity.Blog;
 import com.adam.blog.service.BlogService;
 import com.adam.blog.service.TagService;
 import com.adam.blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -40,6 +42,7 @@ public class IndexController {
     public String search(@PageableDefault(size = 10, sort = {"updateTime"},direction = Sort.Direction.DESC)Pageable pageable,
                          @RequestParam String query, Model model){
         model.addAttribute("page", blogService.listBlog("%" + query + "%", pageable));
+        Page<Blog> show = blogService.listBlog("%" + query + "%", pageable);
         model.addAttribute("query", query);
         return "search";
     }
